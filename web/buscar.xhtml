@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            
+            <p:menubar> 
+                <p:submenu label="Menú">
+                    <p:menuitem value="Inicio" url="faces/index.xhtml"></p:menuitem>
+                    <p:menuitem value="Captura" url="faces/CapturaUsuario.xhtml"></p:menuitem>
+                    <p:menuitem value="Consulta" url="faces/buscar.xhtml"></p:menuitem>
+                </p:submenu>
+            </p:menubar>
+            <br />
+            
+            <p:panel id="panel" header="Usuarios">
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="ID: "></p:outputLabel>
+                    <p:inputText value="#{capturarController.usuario.id}" required="true"></p:inputText>
+
+                    
+                </p:panelGrid><br />
+                <p:commandButton value="Buscar" update="panel" action="#{capturarController.buscar()}" style="height: 30px; font-size: 12px; "></p:commandButton>
+                <br/><p:growl id="msgs" />
+            </p:panel>         
+        </h:form>
+    </h:body>
+</html>
